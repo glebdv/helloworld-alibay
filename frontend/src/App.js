@@ -3,16 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {}
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <input placeholder="Username" ref={r => this.input = r}></input>
+          <div></div>
+          <button onClick={this.login}>Login</button>
+          <div>or</div>
+          <button onClick={this.signUp}>Sign up</button>
+          {/* {this.state.list.map(x => <li>{x}</li>)} */}
+
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
